@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="weather-icon" src="icons_rough/WeatherIcon1.svg" alt="weather icon">
+
+    <div>
+        <button id="switch">Switch</button>
+    </div>
+
+    <script>
+    const weather_icon = document.getElementById("weather-icon");
+    const switch_btn = document.getElementById("switch");
+
+    show_image_1 = true;
+
+    switch_btn.onclick = () => {
+        if (show_image_1) {
+            weather_icon.setAttribute("src", "icons_rough/WeatherIcon2.svg");
+            show_image_1 = false;
+        }
+        else {
+            weather_icon.setAttribute("src", "icons_rough/WeatherIcon1.svg");
+            show_image_1 = true;
+        }
+    }
+    
+    </script>
+</body>
+</html>

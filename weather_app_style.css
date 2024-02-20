@@ -1,0 +1,262 @@
+@font-face {
+    font-family: 'Inter';
+    src: url(fonts/Inter-VariableFont_slnt\,wght.ttf);
+}
+
+@font-face {
+    font-family: 'Poppins';
+    src: url(fonts/Poppins-Medium.ttf);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* constants */
+
+/* light mode */
+html:not([dark="1"]) {
+    --body-bg-color: #c1dff5;
+    --text-color: #000;
+    --main-bg-color: #fff;
+    --detail-text-color: #282e32;
+    --detail-bg-color: #ceedff;
+}
+
+/* dark mode */
+html[dark="1"] {
+    --body-bg-color: #607798;
+    --text-color: #fff;
+    --main-bg-color: linear-gradient(to bottom, #464956, #2a2f4b);
+    --detail-text-color: #fff;
+    --detail-bg-color: #242943;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    background: var(--body-bg-color);
+    color: var(--text-color);
+}
+
+.main-container {
+    margin: auto;
+    margin-top: 13vh;
+    width: 100%;
+    max-width: 350px;
+    height: 476px;
+    border-radius: 24px;
+    background: var(--main-bg-color);
+    overflow: hidden;
+}
+
+.header-section {
+    padding: 24px;
+    padding-top: 22px;
+    padding-bottom: 0px;
+    height: 80px;
+}
+
+.info-section {
+    display: flex;
+    position: relative;
+}
+
+.info-section .icon {
+    margin-right: 10px;
+    font-size: 25px;
+}
+
+.info-details, .feels-like, .details-card {
+    font-size: 13px;
+    letter-spacing: -0.02rem;
+}
+
+.info-details {
+    padding-top: 3px;
+    font-weight: 500;
+}
+
+.info-details h3 {
+    padding-bottom: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: normal;
+}
+
+.info-area {
+    position: absolute;
+    top: -22px;
+    left: -24px;
+    width: 350px;
+    height: 80px;
+    cursor: pointer;
+}
+
+.search-icon-light {
+    position: absolute;
+    right: 0px;
+    display: flex;
+    align-items: center;
+    height: 26px;
+    color: var(--detail-text-color);
+    opacity: 80%;
+}
+
+.search-section {
+    display: none;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    height: 34px;
+    border-radius: 24px;
+    background: #ececec;
+}
+
+.search-box:hover {
+    background: #e0e0e0;
+}
+
+#search-input {
+    border: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 4px;
+    padding-right: 10px;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 15px;
+    background: transparent;
+}
+
+#search-input:focus {
+    outline: none;
+}
+
+#search-input::placeholder {
+    color: #7e7e7e;
+    opacity: 100%;
+}
+
+.search-icon {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding: 6px;
+    margin-left: 6px;
+    font-size: 18px;
+    border-radius: 50%;
+    cursor: pointer;
+    color: #3b454d;
+}
+
+.popup-message {
+    visibility: hidden;
+    position: absolute;
+    margin-left: 36px;
+    z-index: 1;
+    padding: 10px 14px;
+    font-size: 13px;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.4);
+    background: #ccc;
+    color: #000;
+}
+
+.popup-message.show {
+    visibility: visible;
+    animation: fade-in 0.7s;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        margin-top: -6px;
+        visibility: hidden;
+    }
+    50% {
+        margin-top: 0;
+    }
+    100% {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.weather-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.weather-icon-box {
+    width: 120px;
+    height: 120px;
+}
+
+#label-description {
+    margin-top: 5px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 22px;
+    line-height: 28px;
+}
+
+.temp-container {
+    display: flex;
+    font-size: 50px;
+    font-weight: 500;
+}
+
+.temp-unit {
+    padding-top: 6px;
+    font-size: 32px;
+}
+
+.feels-like {
+    margin-top: 6px;
+}
+
+.details-card {
+    display: flex;
+    flex-direction: column;
+    width: 265px;
+    padding: 18px 20px;
+    padding-bottom: 20px;
+    margin-top: 18px;
+    row-gap: 8px;
+    border-radius: 20px;
+    color: var(--detail-text-color);
+    background: var(--detail-bg-color);
+}
+
+.details-card .item-icon {
+    display: inline-block;
+    margin-right: 2px;
+    width: 13px;
+    text-align: center;
+}
+
+#theme-switch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute; 
+    top: 24px; 
+    right: 24px;
+    width: 25px;
+    height: 27px;
+    border: 2px solid #000a;
+    border-radius: 4px;
+    color: #000;
+    background: transparent;
+    opacity: 25%;
+}
+
+#theme-switch:hover {
+    background: #fff4;
+    opacity: 100%;
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" dark="0">
+<head>
+    <title>Weather App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="weather_app_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" crossorigin="anonymous">
+</head>
+<body>
+    <div class="main-container">
+        <div class="header-section">
+            <div class="info-section">
+                <div class="icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <div class="info-details">
+                    <h3 id="label-name">New York, USA</h3>
+                    <div id="label-timestamp">
+                        Sat 10:00 PM, 10/08/2024 
+                    </div>
+                </div>
+                <div class="search-icon-light">
+                    <i class="fas fa-search"></i>
+                </div>
+                <div class="info-area"></div>
+            </div>
+            <div class="search-section">
+                <div class="search-box">
+                    <div class="search-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <input id="search-input" name="search-input" placeholder="Search">
+                </div>
+                <div class="popup-message"></div>    
+            </div>
+        </div>
+        <div class="weather-content">
+            <div class="weather-icon-box"><img id="weather-icon" src="images/weather_1.svg" height="100%"></div>
+            <div id="label-description">Sunny</div>
+            <div class="temp-container">
+                <div id="label-temp">28</div>
+                <div class="temp-unit">°C</div>
+            </div>
+            <div class="feels-like">
+                Feels like <span id="label-feels-like">29</span>°C
+            </div>
+            <div class="details-card">
+                <div class="detail">
+                    <div class="item-icon"><i class="fas fa-wind"></i></div>
+                    Wind speed: <span id="label-wind-speed">6 m/s</span>
+                </div>
+                <div class="detail">
+                    <div class="item-icon"><i class="fas fa-tint"></i></div>
+                    Humidity: <span id="label-humidity">94%</span>
+                </div>
+                <div class="detail">
+                    <div class="item-icon"><i class="fas fa-cloud-showers-heavy"></i></div>
+                    Precipitation: <span id="label-precipitation">6%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button id="theme-switch" title="theme"><i class="fas fa-cog"></i></button>
+    <script type="module" src="weather_app.js"></script>
+</body>
+</html>

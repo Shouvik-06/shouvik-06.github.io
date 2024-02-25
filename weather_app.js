@@ -7,6 +7,7 @@ const search_section = document.querySelector('.search-section');
 const search_box = document.querySelector('.search-box');
 const search_input = document.getElementById('search-input');
 const search_icon = document.querySelector('.search-icon');
+const loader_box = document.querySelector('.loader-box');
 const popup_message = document.querySelector('.popup-message');
 const theme_switch = document.getElementById('theme-switch');
 const weather_icon = document.getElementById('weather-icon');
@@ -27,9 +28,11 @@ async function searchWeather() {
     const input = search_input.value;
     if (input === "") {return;}
     search_input.setAttribute('disabled', '');
+    search_icon.style.display = "none";
+    loader_box.style.display = "flex";
     
     const data = await weather_query.getWeatherData(input);
-    
+
     if (data.ok) {
         displayWeather(data.value);
         outsideClickHandle();
@@ -38,6 +41,8 @@ async function searchWeather() {
     }
 
     search_input.removeAttribute('disabled');
+    search_icon.style.display = "flex";
+    loader_box.style.display = "none";
 }
 
 
